@@ -8,4 +8,5 @@ Projeto com a turma da Capgemini
 - Frondend (angular)
 
 ## Time
-- Willians Martins
+- Willians Martins2
+- Wesley Moura dos Santos
