@@ -9,5 +9,6 @@ Projeto com a turma da Capgemini
 
 ## Time
 - Bruna Bruno
+- Bruno Assis
 - Wesley Moura dos Santos
 - Willians Martins
