@@ -8,5 +8,7 @@ Projeto com a turma da Capgemini
 - Frondend (angular)
 
 ## Time
+- Bruna Bruno
 - Bruno Assis
+- Wesley Moura dos Santos
 - Willians Martins
