@@ -24,6 +24,15 @@ public class ProdutoDAO {
         return batatas;
 	}
 	
+	public Batata buscarBatata(int id) {
+		for (Batata batata : batatas) {
+			if(batata.getId() == id) {
+				return batata;
+			}
+		}
+		return null;
+	}
+	
 	boolean excluirBatata(int id) {
 		boolean encontrou = false;
 		

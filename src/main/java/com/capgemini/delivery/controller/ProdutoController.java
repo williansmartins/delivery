@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.capgemini.delivery.dao.ProdutoDAO;
@@ -29,8 +30,12 @@ public class ProdutoController {
         return adicionais;
     }
 
-    void buscarUmaBatata(int id) {
-    	//TODO: implementar metodo
+    @GetMapping("/batatas/{id}")
+    @ResponseBody
+    Batata buscarUmaBatata(@PathVariable int id) {
+    	System.out.println(">>>>" + id);
+    	Batata batata = dao.buscarBatata(id);
+    	return batata;
     }
 
 }
