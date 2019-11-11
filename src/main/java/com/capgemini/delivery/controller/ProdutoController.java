@@ -33,7 +33,7 @@ public class ProdutoController {
         Produto adicional3 = new Produto();
         adicional1.setTitulo("Cheddar");
         
-		adicionais.add(adicional1);
+        adicionais.add(adicional1);
         adicionais.add(adicional2);
         adicionais.add(adicional3);
         return adicionais;
