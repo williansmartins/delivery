@@ -9,3 +9,4 @@ Projeto com a turma da Capgemini
 
 ## Time
 - Willians Martins
+- Bruna Bruno
