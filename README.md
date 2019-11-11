@@ -8,4 +8,5 @@ Projeto com a turma da Capgemini
 - Frondend (angular)
 
 ## Time
+- Bruno Assis
 - Willians Martins
