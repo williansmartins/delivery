@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Produto {
 
+	private long id;
 	private String titulo;
 	private double preco;
 	private List<Produto> ingredientes;
@@ -12,7 +13,7 @@ public class Produto {
 	private Tipo tipo;
 	
 	public Produto(String titulo, double preco, List<Produto> ingredientes, List<Produto> adicionais, String obervacao,
-			Tipo tipo) {
+			Tipo tipo, int id) {
 		super();
 		this.titulo = titulo;
 		this.preco = preco;
@@ -20,6 +21,7 @@ public class Produto {
 		this.adicionais = adicionais;
 		this.obervacao = obervacao;
 		this.tipo = tipo;
+		this.id = id;
 	}
 
 	public Produto() {
@@ -73,11 +75,20 @@ public class Produto {
 	public void setTipo(Tipo tipo) {
 		this.tipo = tipo;
 	}
+	
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	@Override
 	public String toString() {
-		return "Produto [titulo=" + titulo + ", preco=" + preco + ", ingredientes=" + ingredientes + ", adicionais="
-				+ adicionais + ", obervacao=" + obervacao + ", tipo=" + tipo + "]";
+		return "Produto [id=" + id + ", titulo=" + titulo + ", preco=" + preco + ", ingredientes=" + ingredientes
+				+ ", adicionais=" + adicionais + ", obervacao=" + obervacao + ", tipo=" + tipo + "]";
 	}
 	
 }
