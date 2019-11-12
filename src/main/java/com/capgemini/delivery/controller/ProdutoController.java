@@ -1,6 +1,7 @@
 package com.capgemini.delivery.controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +15,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.capgemini.delivery.dao.ProdutoDAO;
 import com.capgemini.delivery.model.Batata;
 import com.capgemini.delivery.model.Bebida;
+import com.capgemini.delivery.model.Cliente;
 import com.capgemini.delivery.model.Imagem;
 import com.capgemini.delivery.model.Produto;
+import com.capgemini.delivery.model.Stock;
+import com.capgemini.delivery.model.StockDetail;
 import com.capgemini.delivery.model.Tag;
+import com.capgemini.delivery.model.Telefone;
+import com.capgemini.delivery.repository.ClienteRepository;
 import com.capgemini.delivery.repository.ImagensRepository;
+import com.capgemini.delivery.repository.StockRepository;
 
 @Controller
 @RequestMapping("/produtos")
@@ -27,6 +34,12 @@ public class ProdutoController {
 	
 	@Autowired
 	private ImagensRepository imagemRepository;
+	
+	@Autowired
+	private StockRepository stockRepository;
+
+	@Autowired
+	private ClienteRepository clienteRepository;
 
 	@RequestMapping(value = "", method = RequestMethod.GET)
     @ResponseBody
@@ -48,6 +61,41 @@ public class ProdutoController {
 		imagem.setTags(tags);
 		
 		imagemRepository.save(imagem);
+		
+		///////////////////////////////////////////
+		System.out.println("Hibernate one to one (Annotation)");
+
+		Stock stock = new Stock();
+
+		stock.setStockCode("7052");
+		stock.setStockName("PADINI");
+
+		StockDetail stockDetail = new StockDetail();
+		stockDetail.setCompName("PADINI Holding Malaysia");
+		stockDetail.setCompDesc("one stop shopping");
+		stockDetail.setRemark("vinci vinci");
+		stockDetail.setListedDate(new Date());
+
+		stock.setStockDetail(stockDetail);
+		stockDetail.setStock(stock);
+
+		stockRepository.save(stock);
+		
+		/////////////////////////////////////////
+		System.out.println("Hibernate one to one (Annotation)");
+
+		Cliente cliente = new Cliente();
+
+		cliente.setCpf("2131231");
+
+		Telefone telefone = new Telefone();
+		telefone.setTelefoneCelular("123");
+		telefone.setTelefoneResidencial("456");
+
+		cliente.setTelefone(telefone);
+		telefone.setCliente(cliente);
+
+		clienteRepository.save(cliente);
 		
 		return produtos;
     }
