@@ -121,4 +121,10 @@ public class ProdutoDAO {
 	public List<Bebida> buscarBebidas() {
 		return bebidas;
 	}
+
+	public Produto inserirProduto(Produto produto) {
+		produtos.add(produto);
+		produto.setId(789);
+		return produto;
+	}
 }

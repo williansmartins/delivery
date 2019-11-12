@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -63,5 +64,10 @@ public class ProdutoController {
     	boolean excluiu = dao.excluirProduto(id);
     	return excluiu;
     }
-
+    
+    @RequestMapping(value = "" , method = RequestMethod.POST)
+    @ResponseBody
+    Produto inserirProduto(@RequestBody Produto produto) {
+    	return dao.inserirProduto(produto);
+    }
 }
