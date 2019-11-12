@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.capgemini.delivery.dao.ProdutoDAO;
@@ -12,6 +13,7 @@ import com.capgemini.delivery.model.Batata;
 import com.capgemini.delivery.model.Produto;
 
 @Controller
+@RequestMapping("/produtos")
 public class ProdutoController {
 
 	private static ProdutoDAO dao = new ProdutoDAO();
