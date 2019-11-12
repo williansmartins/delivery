@@ -4,13 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.capgemini.delivery.model.Batata;
+import com.capgemini.delivery.model.Bebida;
 import com.capgemini.delivery.model.Produto;
 
 public class ProdutoDAO {
 
 	List<Batata> batatas = new ArrayList<Batata>();
 	List<Produto> adicionais = new ArrayList<Produto>();
+	List<Bebida> bebidas = new ArrayList<Bebida>();
 	List<Produto> ingredientes = new ArrayList<Produto>();
+	List<Produto> produtos = new ArrayList<Produto>();
+	//TODO: entender porque nao foi possivel
 	
 	public ProdutoDAO() {
 		popularMassaDeTestes();
@@ -94,5 +98,27 @@ public class ProdutoDAO {
         
         batatas.add(batata1);
         batatas.add(batata2);
+        
+        //POPULANDO AS BEBIDAS
+        Bebida bebida1 = new Bebida();
+        bebida1.setTitulo("Fanta");
+        
+        Bebida bebida2 = new Bebida();
+        bebida2.setTitulo("Coca-Cola");
+        
+        bebidas.add(bebida1);
+        bebidas.add(bebida2);
+        
+        produtos.addAll(batatas);
+        produtos.addAll(adicionais);
+        produtos.addAll(bebidas);
     }
+
+	public List<Produto> buscarTodos() {
+		return produtos;
+	}
+
+	public List<Bebida> buscarBebidas() {
+		return bebidas;
+	}
 }

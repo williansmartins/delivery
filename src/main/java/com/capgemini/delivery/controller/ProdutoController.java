@@ -6,10 +6,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.capgemini.delivery.dao.ProdutoDAO;
 import com.capgemini.delivery.model.Batata;
+import com.capgemini.delivery.model.Bebida;
 import com.capgemini.delivery.model.Produto;
 
 @Controller
@@ -18,26 +20,48 @@ public class ProdutoController {
 
 	private static ProdutoDAO dao = new ProdutoDAO();
 
-	@GetMapping("/batatas")
+	@RequestMapping(value = "", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Produto> buscarTodosProdutos() {
+		List<Produto> produtos = dao.buscarTodos();
+		return produtos;
+    }
+	
+	@RequestMapping(value = "batatas", method = RequestMethod.GET)
     @ResponseBody
     public List<Batata> buscarTodasBatatas() {
 		List<Batata> batatas = dao.buscarBatatas();
 		return batatas;
     }
+	
+	@RequestMapping(value = "bebidas", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Bebida> buscarTodosBebidas() {
+		List<Bebida> bebidas = dao.buscarBebidas();
+		return bebidas;
+    }
     
-    @GetMapping("/adicionais")
+	@RequestMapping(value = "adicionais", method = RequestMethod.GET)
     @ResponseBody
     public List<Produto> buscarTodosAdicionais() {
         List<Produto> adicionais = dao.buscarTodosAdicionais();
         return adicionais;
     }
 
-    @GetMapping("/batatas/{id}")
-    @ResponseBody
-    Batata buscarUmaBatata(@PathVariable int id) {
-    	System.out.println(">>>>" + id);
-    	Batata batata = dao.buscarBatata(id);
-    	return batata;
-    }
+//    @GetMapping("{id}")
+//    @ResponseBody
+//    Batata buscarUmProduto(@PathVariable int id) {
+//    	System.out.println(">>>>" + id);
+//    	Batata batata = dao.buscarBatata(id);
+//    	return batata;
+//    }
+//    
+//    @RequestMapping(method = RequestMethod.DELETE)
+//    @ResponseBody
+//    Batata buscarUmaBatata(@PathVariable int id) {
+//    	System.out.println(">>>>" + id);
+//    	Batata batata = dao.buscarBatata(id);
+//    	return batata;
+//    }
 
 }
