@@ -1,0 +1,9 @@
+insert into imagem (url) values ('https://www.placecage.com/100/100');
+insert into imagem (url) values ('https://www.placecage.com/200/200');
+insert into imagem (url) values ('https://www.placecage.com/300/300');
+insert into imagem (url) values ('https://www.placecage.com/400/400');
+insert into imagem (url) values ('https://www.placecage.com/500/500');
+insert into imagem (url) values ('https://www.placecage.com/600/600');
+insert into imagem (url) values ('https://www.placecage.com/700/700');
+insert into imagem (url) values ('https://www.placecage.com/800/800');
+insert into imagem (url) values ('https://www.placecage.com/900/900');
