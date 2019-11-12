@@ -128,9 +128,10 @@ public class ProdutoDAO {
 	}
 
 	public Produto atualizarProduto(int id,Produto produto) {
-		for (Produto p : produtos) {
-			if (p.getId() == id) {
-				p = produto;
+		for (int contador = 0; contador < produtos.size(); contador++) {
+			if (produtos.get(contador).getId() == id) {
+				produtos.set(contador, produto);
+				break;
 			}
 		}
 
