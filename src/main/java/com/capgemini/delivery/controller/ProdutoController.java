@@ -48,20 +48,20 @@ public class ProdutoController {
         return adicionais;
     }
 
-//    @GetMapping("{id}")
-//    @ResponseBody
-//    Batata buscarUmProduto(@PathVariable int id) {
-//    	System.out.println(">>>>" + id);
-//    	Batata batata = dao.buscarBatata(id);
-//    	return batata;
-//    }
-//    
-//    @RequestMapping(method = RequestMethod.DELETE)
-//    @ResponseBody
-//    Batata buscarUmaBatata(@PathVariable int id) {
-//    	System.out.println(">>>>" + id);
-//    	Batata batata = dao.buscarBatata(id);
-//    	return batata;
-//    }
+    @RequestMapping(value = "{id}", method = RequestMethod.GET)
+    @ResponseBody
+    Produto buscarUmProduto(@PathVariable int id) {
+    	System.out.println(">>>>" + id);
+    	Produto produto = dao.buscarProduto(id);
+    	return produto;
+    }
+    
+    @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
+    @ResponseBody
+    boolean excluirProduto(@PathVariable int id) {
+    	System.out.println(">>>>" + id);
+    	boolean excluiu = dao.excluirProduto(id);
+    	return excluiu;
+    }
 
 }

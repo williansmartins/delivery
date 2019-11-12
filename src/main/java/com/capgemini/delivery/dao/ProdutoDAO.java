@@ -28,21 +28,21 @@ public class ProdutoDAO {
         return batatas;
 	}
 	
-	public Batata buscarBatata(int id) {
-		for (Batata batata : batatas) {
-			if(batata.getId() == id) {
-				return batata;
+	public Produto buscarProduto(int id) {
+		for (Produto produto : produtos) {
+			if(produto.getId() == id) {
+				return produto;
 			}
 		}
 		return null;
 	}
 	
-	boolean excluirBatata(int id) {
+	public boolean excluirProduto(int id) {
 		boolean encontrou = false;
 		
-		for (Batata batata : batatas) {
-			if(batata.getId() == id) {
-				batatas.remove(batata);
+		for (Produto produto : produtos) {
+			if(produto.getId() == id) {
+				produtos.remove(produto);
 				encontrou = true;
 				break;
 			}
