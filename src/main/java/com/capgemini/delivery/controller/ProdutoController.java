@@ -70,4 +70,10 @@ public class ProdutoController {
     Produto inserirProduto(@RequestBody Produto produto) {
     	return dao.inserirProduto(produto);
     }
+    
+    @RequestMapping(value = "{id}" , method = RequestMethod.PUT)
+    @ResponseBody
+    Produto atualizarProduto(@PathVariable int id,@RequestBody Produto produto) {
+    	return dao.atualizarProduto(id, produto);
+    }
 }
