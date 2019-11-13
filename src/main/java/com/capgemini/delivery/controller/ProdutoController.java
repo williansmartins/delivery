@@ -3,6 +3,7 @@ package com.capgemini.delivery.controller;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,7 @@ import com.capgemini.delivery.model.Stock;
 import com.capgemini.delivery.model.StockDetail;
 import com.capgemini.delivery.model.Tag;
 import com.capgemini.delivery.model.Telefone;
+import com.capgemini.delivery.model.Tipo;
 import com.capgemini.delivery.repository.ClienteRepository;
 import com.capgemini.delivery.repository.ImagensRepository;
 import com.capgemini.delivery.repository.ProdutoRepository;
@@ -47,7 +49,7 @@ public class ProdutoController {
 	
 
 
-	@RequestMapping(value = "teste", method = RequestMethod.GET)
+	@RequestMapping(value = "salvar", method = RequestMethod.GET)
     @ResponseBody
     public String teste() {
 		Produto p = new Produto();
@@ -119,16 +121,16 @@ public class ProdutoController {
 	
 	@RequestMapping(value = "batatas", method = RequestMethod.GET)
     @ResponseBody
-    public List<Batata> buscarTodasBatatas() {
-		List<Batata> batatas = dao.buscarBatatas();
-		return batatas;
+    public List<Produto> buscarTodasBatatas() {
+		List<Produto> list = produtoRepository.findByTipo(Tipo.BATATA);
+		return list;
     }
 	
 	@RequestMapping(value = "bebidas", method = RequestMethod.GET)
     @ResponseBody
-    public List<Bebida> buscarTodosBebidas() {
-		List<Bebida> bebidas = dao.buscarBebidas();
-		return bebidas;
+    public List<Produto> buscarTodosBebidas() {
+		List<Produto> list = produtoRepository.findByTipo(Tipo.BEBIDA);
+		return list;
     }
     
 	@RequestMapping(value = "adicionais", method = RequestMethod.GET)
@@ -140,24 +142,22 @@ public class ProdutoController {
 
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
     @ResponseBody
-    Produto buscarUmProduto(@PathVariable int id) {
-    	System.out.println(">>>>" + id);
-    	Produto produto = dao.buscarProduto(id);
+    Optional<Produto> buscarUmProduto(@PathVariable Long id) {
+    	Optional<Produto> produto = produtoRepository.findById(id);
     	return produto;
     }
     
     @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
     @ResponseBody
-    boolean excluirProduto(@PathVariable int id) {
-    	System.out.println(">>>>" + id);
-    	boolean excluiu = dao.excluirProduto(id);
-    	return excluiu;
+    void  excluirProduto(@PathVariable Long id) {
+    	produtoRepository.deleteById(id);
+    	
     }
     
     @RequestMapping(value = "" , method = RequestMethod.POST)
     @ResponseBody
     Produto inserirProduto(@RequestBody Produto produto) {
-    	return dao.inserirProduto(produto);
+    	return produtoRepository.save(produto);
     }
     
     @RequestMapping(value = "{id}" , method = RequestMethod.PUT)
