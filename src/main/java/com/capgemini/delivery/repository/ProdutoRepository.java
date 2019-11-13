@@ -9,4 +9,8 @@ import com.capgemini.delivery.model.Tipo;
 
 public interface ProdutoRepository extends CrudRepository<Produto, Long> {
 	public List<Produto> findByTipo(Tipo tipo);
+
+	
+	
+	
 }

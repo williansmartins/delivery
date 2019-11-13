@@ -29,6 +29,8 @@ import com.capgemini.delivery.repository.ImagensRepository;
 import com.capgemini.delivery.repository.ProdutoRepository;
 import com.capgemini.delivery.repository.StockRepository;
 
+
+
 @Controller
 @RequestMapping("/produtos")
 public class ProdutoController {
@@ -162,7 +164,7 @@ public class ProdutoController {
     
     @RequestMapping(value = "{id}" , method = RequestMethod.PUT)
     @ResponseBody
-    Produto atualizarProduto(@PathVariable int id,@RequestBody Produto produto) {
-    	return dao.atualizarProduto(id, produto);
+    Produto atualizarProduto(@PathVariable Long id,@RequestBody Produto produto) {
+    	return produtoRepository.save(produto);
     }
 }
