@@ -83,15 +83,15 @@ public class ProdutoDAO {
 		// POPULANDO LISTA DE BATATAS
 		Batata batata1 = new Batata();
 		batata1.setTitulo("Batata1");
-		batata1.setAdicionais(adicionais);
-		batata1.setIngredientes(ingredientes);
+//		batata1.setAdicionais(adicionais);
+//		batata1.setIngredientes(ingredientes);
 		batata1.setPreco(10.50);
 		batata1.setId(123);
 
 		Batata batata2 = new Batata();
 		batata2.setTitulo("Batata2");
-		batata2.setAdicionais(adicionais);
-		batata2.setIngredientes(ingredientes);
+//		batata2.setAdicionais(adicionais);
+//		batata2.setIngredientes(ingredientes);
 		batata2.setPreco(15.50);
 		batata2.setId(456);
 

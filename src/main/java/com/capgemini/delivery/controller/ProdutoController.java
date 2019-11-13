@@ -24,6 +24,7 @@ import com.capgemini.delivery.model.Tag;
 import com.capgemini.delivery.model.Telefone;
 import com.capgemini.delivery.repository.ClienteRepository;
 import com.capgemini.delivery.repository.ImagensRepository;
+import com.capgemini.delivery.repository.ProdutoRepository;
 import com.capgemini.delivery.repository.StockRepository;
 
 @Controller
@@ -40,6 +41,22 @@ public class ProdutoController {
 
 	@Autowired
 	private ClienteRepository clienteRepository;
+	
+	@Autowired
+	private ProdutoRepository produtoRepository;
+	
+
+
+	@RequestMapping(value = "teste", method = RequestMethod.GET)
+    @ResponseBody
+    public String teste() {
+		Produto p = new Produto();
+		p.setTitulo("Protudo novo");
+		
+		produtoRepository.save(p);
+		return "sucesso!";
+	}
+	
 
 	@RequestMapping(value = "", method = RequestMethod.GET)
     @ResponseBody

@@ -2,13 +2,21 @@ package com.capgemini.delivery.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity(name = "TB_PRODUTO")
 public class Produto {
 
+	@Id
 	private long id;
 	private String titulo;
+	
+	@Column(name = "xxx")
 	private double preco;
-	private List<Produto> ingredientes;
-	private List<Produto> adicionais;
+//	private List<Produto> ingredientes;
+//	private List<Produto> adicionais;
 	private String obervacao;
 	private Tipo tipo;
 	
@@ -17,8 +25,8 @@ public class Produto {
 		super();
 		this.titulo = titulo;
 		this.preco = preco;
-		this.ingredientes = ingredientes;
-		this.adicionais = adicionais;
+//		this.ingredientes = ingredientes;
+//		this.adicionais = adicionais;
 		this.obervacao = obervacao;
 		this.tipo = tipo;
 		this.id = id;
@@ -44,21 +52,21 @@ public class Produto {
 		this.preco = preco;
 	}
 
-	public List<Produto> getIngredientes() {
-		return ingredientes;
-	}
-
-	public void setIngredientes(List<Produto> ingredientes) {
-		this.ingredientes = ingredientes;
-	}
-
-	public List<Produto> getAdicionais() {
-		return adicionais;
-	}
-
-	public void setAdicionais(List<Produto> adicionais) {
-		this.adicionais = adicionais;
-	}
+//	public List<Produto> getIngredientes() {
+//		return ingredientes;
+//	}
+//
+//	public void setIngredientes(List<Produto> ingredientes) {
+//		this.ingredientes = ingredientes;
+//	}
+//
+//	public List<Produto> getAdicionais() {
+//		return adicionais;
+//	}
+//
+//	public void setAdicionais(List<Produto> adicionais) {
+//		this.adicionais = adicionais;
+//	}
 
 	public String getObervacao() {
 		return obervacao;
@@ -85,10 +93,10 @@ public class Produto {
 		this.id = id;
 	}
 
-	@Override
-	public String toString() {
-		return "Produto [id=" + id + ", titulo=" + titulo + ", preco=" + preco + ", ingredientes=" + ingredientes
-				+ ", adicionais=" + adicionais + ", obervacao=" + obervacao + ", tipo=" + tipo + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Produto [id=" + id + ", titulo=" + titulo + ", preco=" + preco + ", ingredientes=" + ingredientes
+//				+ ", adicionais=" + adicionais + ", obervacao=" + obervacao + ", tipo=" + tipo + "]";
+//	}
 	
 }
