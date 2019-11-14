@@ -1,0 +1,42 @@
+body {
+  background-color: #e6e6e6;
+}
+body h1,
+body h2 {
+  text-align: center;
+}
+body .lista table {
+  /* background-color: green; */
+}
+body .pedido ul {
+  list-style: none;
+}
+body .pedido .batatas .batata {
+  margin: 0 auto;
+  width: 50%;
+  outline: 1px solid #e6e6e6;
+  position: relative;
+  padding: 20px;
+  margin-bottom: 34px;
+}
+body .pedido .batatas .batata h3 {
+  margin-top: 0px;
+}
+body .pedido .batatas .batata .icone-success {
+  position: absolute;
+  font-size: 40px;
+  color: #30b830;
+  right: -11px;
+  top: -17px;
+}
+body .pedido .batatas .batata .preco {
+  position: absolute;
+  right: -28px;
+  top: 37px;
+  background-color: yellow;
+  padding: 6px;
+  outline: solid 1px;
+}
+body .pedido .batatas .batata .ingredientes {
+  list-style: square;
+}
