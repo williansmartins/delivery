@@ -1,5 +1,5 @@
 body {
-  background-color: #e6e6e6;
+  background-color: #f1f3f6;
 }
 body h1,
 body h2 {
@@ -8,35 +8,40 @@ body h2 {
 body .lista table {
   /* background-color: green; */
 }
-body .pedido ul {
-  list-style: none;
-}
-body .pedido .batatas .batata {
+body .pedido .batata-wrapper {
+  background-color: white;
   margin: 0 auto;
-  width: 50%;
-  outline: 1px solid #e6e6e6;
+  border: 1px solid #e6e6e6;
   position: relative;
   padding: 20px;
   margin-bottom: 34px;
+  border-radius: 3px;
 }
-body .pedido .batatas .batata h3 {
+body .pedido .batata-wrapper h3 {
   margin-top: 0px;
+  font-size: 20px;
 }
-body .pedido .batatas .batata .icone-success {
+body .pedido .batata-wrapper .contador-wrapper {
+  text-align: center;
+}
+body .pedido .batata-wrapper .contador-wrapper .contador {
+  width: 30px;
+}
+body .pedido .batata-wrapper .icone-success {
   position: absolute;
   font-size: 40px;
   color: #30b830;
   right: -11px;
   top: -17px;
 }
-body .pedido .batatas .batata .preco {
-  position: absolute;
-  right: -28px;
-  top: 37px;
-  background-color: yellow;
+body .pedido .batata-wrapper .preco {
   padding: 6px;
-  outline: solid 1px;
+  font-weight: bold;
 }
-body .pedido .batatas .batata .ingredientes {
+body .pedido .batata-wrapper .ingredientes {
   list-style: square;
+  padding-left: 0;
+}
+body .pedido ul {
+  list-style: none;
 }
