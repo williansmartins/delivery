@@ -1,6 +1,12 @@
 body {
   background-color: #f1f3f6;
 }
+body .etapas {
+  margin-bottom: 20px;
+}
+body .etapas .row .container {
+  text-align: center;
+}
 body h1,
 body h2 {
   text-align: center;

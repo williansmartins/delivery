@@ -14,17 +14,33 @@
         <link type="text/css" rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <div class="lista">
-        
+<body ng-app="principal" ng-controller="Controller">
+    <!-- {{itens}} -->
+    <br>
+    <div class="etapas">
+        <div class="row">
+            <div class="container">
+                <div class="btn-group btn-group-lg" role="group" aria-label="Grupos de botões grandes">
+                    <button type="button" class="btn btn-primary" ng-click="mudarTela('lista')">Etapa1</button>
+                    <button type="button" class="btn btn-primary" ng-click="mudarTela('pedido')">Etapa2</button>
+                    <button type="button" class="btn btn-primary" ng-click="mudarTela('xxx')">Etapa3</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lista" ng-if="tela == 'lista'">
         <div class="container">
-            <div class="row">
-                <h1>Lista de pedidos</h1>
+            <h1>Lista de pedidos</h1>
+            <div class="area">
                 <button>Novo pedido</button>
                 <br>
-                Digite o que procur a:
+                Digite o que procura:
                 <input type="text">
                 <button>buscar</button>
+            </div>
+            <br>
+            <div class="row">
                 <table class="table table-striped table-hover">
                     <tr>
                         <th>codigo</th>
@@ -73,7 +89,7 @@
 
     </div>
 
-    <div class="pedido">
+    <div class="pedido" ng-if="tela == 'pedido'">
         <h1>Pedido</h1>
         <h2>Escolha as batatas</h2>
 
@@ -220,6 +236,13 @@
         </ul>
     </div>
 
+
+    <!--/#scripts--> 
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>	
+    <script type="text/javascript" src="js/vendor/angular/angular-1.5.8.js"></script>
+    <script type="text/javascript" src="js/app/app.js"></script>
+    <script type="text/javascript" src="js/app/controller.js"></script>
 </body>
 
 </html>
