@@ -17,23 +17,13 @@
 <body ng-app="principal" ng-controller="Controller">
     <!-- {{itens}} -->
     <br>
-    <div class="etapas">
-        <div class="row">
-            <div class="container">
-                <div class="btn-group btn-group-lg" role="group" aria-label="Grupos de botões grandes">
-                    <button type="button" class="btn btn-primary" ng-click="mudarTela('lista')">Etapa1</button>
-                    <button type="button" class="btn btn-primary" ng-click="mudarTela('pedido')">Etapa2</button>
-                    <button type="button" class="btn btn-primary" ng-click="mudarTela('xxx')">Etapa3</button>
-                </div>
-            </div>
-        </div>
-    </div>
+ 
 
     <div class="lista" ng-if="tela == 'lista'">
         <div class="container">
             <h1>Lista de pedidos</h1>
             <div class="area">
-                <button>Novo pedido</button>
+                <button ng-click="mudarTela('pedido')">Novo pedido</button>
                 <br>
                 Digite o que procura:
                 <input type="text">
@@ -92,148 +82,39 @@
     <div class="pedido" ng-if="tela == 'pedido'">
         <h1>Pedido</h1>
         <h2>Escolha as batatas</h2>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                        <div class="batata-wrapper">
-                            <span class="icone-success"><i class="fas fa-check-circle"></i></span>
-                            <h3>Batata mega especial com dobro de bacon do himalaia</h3>
-                            <ul class="ingredientes list-group-flush">
-                                <li class="ingrediente list-group-item">
-                                    <input type="checkbox" name="xxx" class="form-check-input" id="">
-                                    ingrediente1
-                                </li>
-                                <li class="ingrediente list-group-item">
-                                    <input type="checkbox" name="xxx" class="form-check-input" id="">
-                                    ingrediente2
-                                </li>
-                                <li class="ingrediente list-group-item">
-                                    <input type="checkbox" name="xxx" class="form-check-input" id="">
-                                    ingrediente3
-                                </li>
-                                <li class="ingrediente list-group-item">
-                                    <input type="checkbox" name="xxx" class="form-check-input" id="">
-                                    ingrediente4
-                                </li>
-                                <li class="ingrediente list-group-item">
-                                    <input type="checkbox" name="xxx" class="form-check-input" id="">
-                                    ingrediente5
-                                </li>
-                            </ul>
-                            <div class="contador-wrapper">
-                                <button type="button" class="btn btn-primary"><i class="fas fa-plus"></i></button>
-                                <input type="number" class="contador">
-                                <button type="button" class="btn btn-primary"><i class="fas fa-minus"></i></button>
-                                <span class="preco">R$ 20.00</span>
-                            </div>
-                        </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="batata-wrapper">
-                        <span class="icone-success"><i class="fas fa-check-circle"></i></span>
-                        <h3>Batata mega especial com dobro de bacon do himalaia</h3>
-                        <span class="preco">R$ 20.00</span>
-                        <ul class="ingredientes list-group-flush">
-                            <li class="ingrediente list-group-item active">ingrediente1</li>
-                            <li class="ingrediente list-group-item">ingrediente2</li>
-                            <li class="ingrediente list-group-item">ingrediente3</li>
-                            <li class="ingrediente list-group-item">ingrediente4</li>
-                            <li class="ingrediente list-group-item">ingrediente5</li>
-                        </ul>
-                        <input type="number" class="form-group">
-                        <button type="button" class="btn btn-primary"><i class="fas fa-plus"></i></button>
-                        <button type="button" class="btn btn-primary"><i class="fas fa-minus"></i></button>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                        <div class="batata-wrapper">
-                            <span class="icone-success"><i class="fas fa-check-circle"></i></span>
-                            <h3>Batata mega especial com dobro de bacon do himalaia</h3>
-                            <span class="preco">R$ 20.00</span>
-                            <ul class="ingredientes list-group-flush">
-                                <li class="ingrediente list-group-item active">ingrediente1</li>
-                                <li class="ingrediente list-group-item">ingrediente2</li>
-                                <li class="ingrediente list-group-item">ingrediente3</li>
-                                <li class="ingrediente list-group-item">ingrediente4</li>
-                                <li class="ingrediente list-group-item">ingrediente5</li>
-                            </ul>
-                            <input type="number" class="form-group">
-                            <button type="button" class="btn btn-primary"><i class="fas fa-plus"></i></button>
-                            <button type="button" class="btn btn-primary"><i class="fas fa-minus"></i></button>
-                        </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="batata-wrapper">
-                        <span class="icone-success"><i class="fas fa-check-circle"></i></span>
-                        <h3>Batata mega especial com dobro de bacon do himalaia</h3>
-                        <span class="preco">R$ 20.00</span>
-                        <ul class="ingredientes list-group-flush">
-                            <li class="ingrediente list-group-item active">ingrediente1</li>
-                            <li class="ingrediente list-group-item">ingrediente2</li>
-                            <li class="ingrediente list-group-item">ingrediente3</li>
-                            <li class="ingrediente list-group-item">ingrediente4</li>
-                            <li class="ingrediente list-group-item">ingrediente5</li>
-                        </ul>
-                        <input type="number" class="form-group">
-                        <button type="button" class="btn btn-primary"><i class="fas fa-plus"></i></button>
-                        <button type="button" class="btn btn-primary"><i class="fas fa-minus"></i></button>
-                    </div>
+		   <div class="etapas">
+        <div class="row">
+            <div class="container">
+                <div class="btn-group btn-group-lg" role="group" aria-label="Grupos de botões grandes">
+                    <button type="button" class="btn btn-primary" ng-click="mudarTela('lista')">Etapa1</button>
+                    <button type="button" class="btn btn-primary" ng-click="mudarTela('pedido')">Etapa2</button>
+                    <button type="button" class="btn btn-primary" ng-click="mudarTela('resumo')">Etapa3</button>
                 </div>
             </div>
         </div>
-        <ul class="batatas">
-            <li class="batata">
-               
-            </li>
-
-            <li class="batata">
-                <div class="batata-wrapper">
-                    <span class="icone-success"><i class="fas fa-check-circle"></i></span>
-                    <h3>Mini Potato</h3>
-                    <span class="preco">R$ 20.00</span>
-                    <ul class="ingredientes">
-                        <li class="ingrediente">ingrediente1</li>
-                        <li class="ingrediente">ingrediente2</li>
-                        <li class="ingrediente">ingrediente3</li>
-                        <li class="ingrediente">ingrediente4</li>
-                        <li class="ingrediente">ingrediente5</li>
-                    </ul>
-                    <input type="number">
-                </div>
-            </li>
-            <li class="batata">
-                <div class="batata-wrapper">
-                    <span class="icone-success"><i class="fas fa-check-circle"></i></span>
-                    <h3>titulo</h3>
-                    <span class="preco">R$ 20.00</span>
-                    <ul class="ingredientes">
-                        <li class="ingrediente">ingrediente1</li>
-                        <li class="ingrediente">ingrediente2</li>
-                        <li class="ingrediente">ingrediente3</li>
-                        <li class="ingrediente">ingrediente4</li>
-                        <li class="ingrediente">ingrediente5</li>
-                    </ul>
-                    <input type="number">
-                </div>
-            </li>
-            <li class="batata">
-                <div class="batata-wrapper">
-                    <span class="icone-success"><i class="fas fa-check-circle"></i></span>
-                    <h3>titulo</h3>
-                    <span class="preco">R$ 20.00</span>
-                    <ul class="ingredientes">
-                        <li class="ingrediente">ingrediente1</li>
-                        <li class="ingrediente">ingrediente2</li>
-                        <li class="ingrediente">ingrediente3</li>
-                        <li class="ingrediente">ingrediente4</li>
-                        <li class="ingrediente">ingrediente5</li>
-                    </ul>
-                    <input type="number">
-                </div>
-            </li>
-
-        </ul>
+    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6" ng-repeat="batata in itens" ng-if="batata.tipo==null">
+					<div class="batata-wrapper">
+						<span class="icone-success"><i class="fas fa-check-circle"></i></span>
+						<h3>{{batata.titulo}}</h3>
+						<ul class="ingredientes list-group-flush">
+							<li class="ingrediente list-group-item" ng-repeat="ingrediente in batata.ingredientes">
+								{{ingrediente.titulo}}
+							</li>
+						</ul>
+						<div class="contador-wrapper">
+							<button type="button" class="btn btn-primary"><i class="fas fa-plus"></i></button>
+							<input type="number" class="contador">
+							<button type="button" class="btn btn-primary"><i class="fas fa-minus"></i></button>
+							<span class="preco">R$ 20.00</span>
+						</div>
+					</div>
+                </div>                
+            </div>
+        </div>
+		
     </div>
 
 
