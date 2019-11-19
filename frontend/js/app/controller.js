@@ -5,6 +5,7 @@ angular.module('principal')
     $scope.produtos = null;
     $scope.tela = 'pedido';
     $scope.telaPedido = 'batatas';
+    $scope.total = 0;
 
     $scope.mudarTela = function(tela){
       $scope.tela = tela;
@@ -16,11 +17,13 @@ angular.module('principal')
 
     $scope.somarUm = function(batata){
       batata.quantidade++;
+      atualizarTotal(batata.preco);
     }
 
 
     $scope.subtrairUm = function(batata){
       batata.quantidade--;
+      atualizarTotal(-batata.preco);
     }
 
     $scope.somarUmAdicional = function(batata, adicional){
@@ -36,6 +39,10 @@ angular.module('principal')
             value.adicional4 = 0;
             value.adicional5 = 0;
         });
+    }
+
+    var atualizarTotal = function(novoValor){
+      $scope.total = $scope.total + novoValor;
     }
 
     init = function() {
