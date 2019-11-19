@@ -99,7 +99,7 @@
             <div class="row">
                 <div class="col-sm-6" ng-repeat="batata in produtos" ng-if="batata.tipo=='BATATA'">
 					<div class="batata-wrapper">
-						<span class="icone-success"><i class="fas fa-check-circle"></i></span>
+						<span class="icone-success" ng-if="batata.quantidade > 0"><i class="fas fa-check-circle"></i></span>
 						<h3>{{batata.titulo}}</h3>
 						<ul class="ingredientes list-group-flush">
 							<li class="ingrediente list-group-item" ng-repeat="ingrediente in batata.ingredientes">
