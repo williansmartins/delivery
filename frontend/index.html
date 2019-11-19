@@ -86,16 +86,18 @@
         <div class="row">
             <div class="container">
                 <div class="btn-group btn-group-lg" role="group" aria-label="Grupos de botões grandes">
-                    <button type="button" class="btn btn-primary" ng-click="mudarTela('lista')">Etapa1</button>
-                    <button type="button" class="btn btn-primary" ng-click="mudarTela('pedido')">Etapa2</button>
-                    <button type="button" class="btn btn-primary" ng-click="mudarTela('resumo')">Etapa3</button>
+                    <button type="button" class="btn btn-primary active" ng-click="mudarTela('lista')">Batatas</button>
+                    <button type="button" class="btn btn-primary" ng-click="mudarTela('pedido')">Adicionais</button>
+                    <button type="button" class="btn btn-primary" ng-click="mudarTela('resumo')">Bebidas</button>
+                    <button type="button" class="btn btn-primary" ng-click="mudarTela('resumo')">Endereço</button>
+                    <button type="button" class="btn btn-primary" ng-click="mudarTela('resumo')">Resumo</button>
                 </div>
             </div>
         </div>
     </div>
         <div class="container">
             <div class="row">
-                <div class="col-sm-6" ng-repeat="batata in itens" ng-if="batata.tipo==null">
+                <div class="col-sm-6" ng-repeat="batata in itens" ng-if="batata.tipo=='BATATA'">
 					<div class="batata-wrapper">
 						<span class="icone-success"><i class="fas fa-check-circle"></i></span>
 						<h3>{{batata.titulo}}</h3>
