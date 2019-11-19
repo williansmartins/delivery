@@ -81,38 +81,68 @@
 
     <div class="pedido" ng-if="tela == 'pedido'">
         <h1>Pedido</h1>
-        <h2>Escolha as batatas</h2>
-		   <div class="etapas">
-        <div class="row">
-            <div class="container">
-                <div class="btn-group btn-group-lg" role="group" aria-label="Grupos de botões grandes">
-                    <button type="button" class="btn btn-primary active" ng-click="mudarTela('lista')">Batatas</button>
-                    <button type="button" class="btn btn-primary" ng-click="mudarTela('pedido')">Adicionais</button>
-                    <button type="button" class="btn btn-primary" ng-click="mudarTela('resumo')">Bebidas</button>
-                    <button type="button" class="btn btn-primary" ng-click="mudarTela('resumo')">Endereço</button>
-                    <button type="button" class="btn btn-primary" ng-click="mudarTela('resumo')">Resumo</button>
+        <h3>Total: R$ 345,00</h3>
+        <div class="etapas">
+            <div class="row">
+                <div class="container">
+                    <div class="btn-group btn-group-lg" role="group" aria-label="Grupos de botões grandes">
+                        <button type="button" class="btn btn-primary" ng-class="{'active' : telaPedido=='batatas'}" ng-click="mudarTelaPedido('batatas')">Batatas</button>
+                        <button type="button" class="btn btn-primary" ng-class="{'active' : telaPedido=='bebidas'}" ng-click="mudarTelaPedido('bebidas')">Bebidas</button>
+                        <button type="button" class="btn btn-primary" ng-class="{'active' : telaPedido=='endereco'}" ng-click="mudarTelaPedido('endereco')">Endereço</button>
+                        <button type="button" class="btn btn-primary" ng-class="{'active' : telaPedido=='resumo'}" ng-click="mudarTelaPedido('resumo')">Resumo</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-        <div class="container">
+        <div class="container" ng-if="telaPedido == 'batatas'">
+            <h2>Escolha as batatas</h2>
             <div class="row">
                 <div class="col-sm-6" ng-repeat="batata in produtos" ng-if="batata.tipo=='BATATA'">
-					<div class="batata-wrapper">
-						<span class="icone-success" ng-if="batata.quantidade > 0"><i class="fas fa-check-circle"></i></span>
-						<h3>{{batata.titulo}}</h3>
-						<ul class="ingredientes list-group-flush">
-							<li class="ingrediente list-group-item" ng-repeat="ingrediente in batata.ingredientes">
-								{{ingrediente.titulo}}
-							</li>
-						</ul>
-						<div class="contador-wrapper">
-							<button type="button" class="btn btn-primary" ng-click="subtrairUm(batata)"><i class="fas fa-minus"></i></button>
-							<input type="text" class="contador" ng-model="batata.quantidade" readonly>
-							<button type="button" class="btn btn-primary" ng-click="somarUm(batata)"><i class="fas fa-plus"></i></button>
-							<span class="preco">{{batata.preco * batata.quantidade | currency}}</span>
-						</div>
-					</div>
+                    <div class="batata-wrapper">
+                        <span class="icone-success" ng-if="batata.quantidade > 0"><i class="fas fa-check-circle"></i></span>
+                        <h3>{{batata.titulo}}</h3>
+                        <ul class="ingredientes list-group-flush">
+                            <li class="ingrediente list-group-item" ng-repeat="ingrediente in batata.ingredientes">
+                                {{ingrediente.titulo}}
+                            </li>
+                        </ul>
+                        <div class="contador-wrapper">
+                            <button type="button" class="btn btn-primary" ng-click="subtrairUm(batata)"><i class="fas fa-minus"></i></button>
+                            <input type="text" class="contador" ng-model="batata.quantidade" readonly>
+                            <button type="button" class="btn btn-primary" ng-click="somarUm(batata)"><i class="fas fa-plus"></i></button>
+                            <span class="preco">{{batata.preco * batata.quantidade | currency}}</span>
+                            <button class="btn btn-success" data-toggle="collapse" href="#collapseExample{{$index}}" role="button" aria-expanded="false" aria-controls="collapseExample">adicionais</button>
+                        </div>
+                        <div class="row adicionais collapse" id="collapseExample{{$index}}">
+                            <div class="col-sm-12" ng-repeat="adicional in produtos" ng-if="adicional.tipo=='ADICIONAL'">
+                                <div class="adicional-wrapper">
+                                    <h3>{{adicional.titulo}}</h3>
+                                    <div class="contador-wrapper">
+                                        <button type="button" class="btn btn-success" ng-click="subtrairUmAdicional(batata, adicional)"><i class="fas fa-minus"></i></button>
+                                        <input type="text" class="contador" ng-model="adicional.quantidade" readonly>
+                                        <button type="button" class="btn btn-success" ng-click="somarUmAdicional(batata, adicional)"><i class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        <div class="container" ng-if="telaPedido == 'bebidas'">
+            <div class="row">
+                <div class="col-sm-6" ng-repeat="bebida in produtos" ng-if="bebida.tipo=='BEBIDA'">
+                    <div class="bebida-wrapper">
+                        <span class="icone-success" ng-if="bebida.quantidade > 0"><i class="fas fa-check-circle"></i></span>
+                        <h3>{{bebida.titulo}}</h3>
+                        <div class="contador-wrapper">
+                            <button type="button" class="btn btn-primary" ng-click="subtrairUm(bebida)"><i class="fas fa-minus"></i></button>
+                            <input type="text" class="contador" ng-model="bebida.quantidade" readonly>
+                            <button type="button" class="btn btn-primary" ng-click="somarUm(bebida)"><i class="fas fa-plus"></i></button>
+                            <span class="preco">{{bebida.preco * bebida.quantidade | currency}}</span>
+                            <button class="btn btn-success" data-toggle="collapse" href="#collapseExample{{$index}}" role="button" aria-expanded="false" aria-controls="collapseExample">adicionais</button>
+                        </div>
+                    </div>
                 </div>                
             </div>
         </div>
@@ -122,7 +152,7 @@
 
     <!--/#scripts--> 
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>	
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/vendor/angular/angular-1.5.8.js"></script>
     <script type="text/javascript" src="js/vendor/angular/angular_locale_pt-br.js"></script>
     <script type="text/javascript" src="js/app/app.js"></script>
