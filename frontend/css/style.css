@@ -34,6 +34,12 @@ body .pedido .batata-wrapper .contador-wrapper .contador {
   width: 30px;
   text-align: center;
 }
+body .pedido .batata-wrapper .adicional-wrapper {
+  background-color: #f1f3f6;
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px;
+}
 body .pedido .batata-wrapper .icone-success {
   position: absolute;
   font-size: 40px;
