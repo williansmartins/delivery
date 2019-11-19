@@ -32,6 +32,7 @@ body .pedido .batata-wrapper .contador-wrapper {
 }
 body .pedido .batata-wrapper .contador-wrapper .contador {
   width: 30px;
+  text-align: center;
 }
 body .pedido .batata-wrapper .icone-success {
   position: absolute;

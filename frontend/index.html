@@ -15,7 +15,7 @@
 </head>
 
 <body ng-app="principal" ng-controller="Controller">
-    <!-- {{itens}} -->
+    <!-- {{produtos}} -->
     <br>
  
 
@@ -97,7 +97,7 @@
     </div>
         <div class="container">
             <div class="row">
-                <div class="col-sm-6" ng-repeat="batata in itens" ng-if="batata.tipo=='BATATA'">
+                <div class="col-sm-6" ng-repeat="batata in produtos" ng-if="batata.tipo=='BATATA'">
 					<div class="batata-wrapper">
 						<span class="icone-success"><i class="fas fa-check-circle"></i></span>
 						<h3>{{batata.titulo}}</h3>
@@ -107,10 +107,10 @@
 							</li>
 						</ul>
 						<div class="contador-wrapper">
-							<button type="button" class="btn btn-primary" ng-click="subtrairUm()"><i class="fas fa-minus"></i></button>
-							<input type="number" class="contador" ng-model="quantidade">
-							<button type="button" class="btn btn-primary" ng-click="somarUm()"><i class="fas fa-plus"></i></button>
-							<span class="preco">R$ 20.00</span>
+							<button type="button" class="btn btn-primary" ng-click="subtrairUm(batata)"><i class="fas fa-minus"></i></button>
+							<input type="text" class="contador" ng-model="batata.quantidade" readonly>
+							<button type="button" class="btn btn-primary" ng-click="somarUm(batata)"><i class="fas fa-plus"></i></button>
+							<span class="preco">{{batata.preco * batata.quantidade | currency}}</span>
 						</div>
 					</div>
                 </div>                
@@ -124,6 +124,7 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>	
     <script type="text/javascript" src="js/vendor/angular/angular-1.5.8.js"></script>
+    <script type="text/javascript" src="js/vendor/angular/angular_locale_pt-br.js"></script>
     <script type="text/javascript" src="js/app/app.js"></script>
     <script type="text/javascript" src="js/app/controller.js"></script>
 </body>
