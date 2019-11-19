@@ -1,14 +1,22 @@
 body {
   background-color: #f1f3f6;
 }
+body .etapas {
+  margin-bottom: 20px;
+}
+body .etapas .row .container {
+  text-align: center;
+}
 body h1,
-body h2 {
+body h2,
+body h3 {
   text-align: center;
 }
 body .lista table {
   /* background-color: green; */
 }
-body .pedido .batata-wrapper {
+body .pedido .batata-wrapper,
+body .pedido .bebida-wrapper {
   background-color: white;
   margin: 0 auto;
   border: 1px solid #e6e6e6;
@@ -17,28 +25,42 @@ body .pedido .batata-wrapper {
   margin-bottom: 34px;
   border-radius: 3px;
 }
-body .pedido .batata-wrapper h3 {
+body .pedido .batata-wrapper h3,
+body .pedido .bebida-wrapper h3 {
   margin-top: 0px;
   font-size: 20px;
 }
-body .pedido .batata-wrapper .contador-wrapper {
+body .pedido .batata-wrapper .contador-wrapper,
+body .pedido .bebida-wrapper .contador-wrapper {
   text-align: center;
 }
-body .pedido .batata-wrapper .contador-wrapper .contador {
+body .pedido .batata-wrapper .contador-wrapper .contador,
+body .pedido .bebida-wrapper .contador-wrapper .contador {
   width: 30px;
+  text-align: center;
 }
-body .pedido .batata-wrapper .icone-success {
+body .pedido .batata-wrapper .adicional-wrapper,
+body .pedido .bebida-wrapper .adicional-wrapper {
+  background-color: #f1f3f6;
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px;
+}
+body .pedido .batata-wrapper .icone-success,
+body .pedido .bebida-wrapper .icone-success {
   position: absolute;
   font-size: 40px;
   color: #30b830;
   right: -11px;
   top: -17px;
 }
-body .pedido .batata-wrapper .preco {
+body .pedido .batata-wrapper .preco,
+body .pedido .bebida-wrapper .preco {
   padding: 6px;
   font-weight: bold;
 }
-body .pedido .batata-wrapper .ingredientes {
+body .pedido .batata-wrapper .ingredientes,
+body .pedido .bebida-wrapper .ingredientes {
   list-style: square;
   padding-left: 0;
 }
